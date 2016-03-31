@@ -40,3 +40,35 @@ exports.cOrangeSeller = function(JSONd) {
   });
   return cheapestSeller[0].shop;
 };
+exports.AscApples = function(JSONd){
+  var appleSellers = [];
+  for (var shop in JSONd){
+    if(JSONd[shop].hasOwnProperty("apples")){
+      appleSellers.push({
+        'shop': shop,
+        'price': JSONd[shop].apples
+      });
+    }
+  }
+  var ascendingOrder = appleSellers.sort(function(a,b){
+    return a.price - b.price;
+  });
+  // console.log(ascendingOrder);
+  return ascendingOrder;
+};
+exports.DscApples = function(JSONd){
+  var appleSellers = [];
+  for (var shop in JSONd){
+    if(JSONd[shop].hasOwnProperty("apples")){
+      appleSellers.push({
+        'shop': shop,
+        'price': JSONd[shop].apples
+      });
+    }
+  }
+  var decendingOrder = appleSellers.sort(function(a,b){
+    return b.price - a.price;
+  });
+  // console.log(decendingOrder);
+  return decendingOrder;
+};
