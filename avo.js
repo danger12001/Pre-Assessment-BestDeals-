@@ -27,3 +27,10 @@ var cheapestDeal = ppaMaps.sort(function(a,b){
 var cheapestdeal = cheapestDeal[0];
 return cheapestdeal;
 };
+exports.expensiveDeal = function(ppaMaps){
+  var expensiveDeal = ppaMaps.sort(function(a,b){
+    return b.pricePerAvo - a.pricePerAvo;
+  });
+  var expensivedeal = expensiveDeal[0];
+  return expensivedeal;
+};

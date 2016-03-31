@@ -19,3 +19,12 @@ describe("cheapestDeal",function(){
     assert.deepEqual(result,{"deal":" 5 for R14.50","pricePerAvo":"2.90"});
   });
 });
+describe("expensiveDeal",function(){
+  it("expensiveDeal",function(){
+    var result = avo.expensiveDeal([ { deal: '1 for R3', pricePerAvo: '3.00' },
+  { deal: ' 2 for R7', pricePerAvo: '3.50' },
+  { deal: ' 3 for R10', pricePerAvo: '3.33' },
+  { deal: ' 5 for R14.50', pricePerAvo: '2.90' } ]);
+    assert.deepEqual(result,{"deal":" 2 for R7","pricePerAvo":"3.50"});
+  });
+});
