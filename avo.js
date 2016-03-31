@@ -34,3 +34,16 @@ exports.expensiveDeal = function(ppaMaps){
   var expensivedeal = expensiveDeal[0];
   return expensivedeal;
 };
+exports.averagePrice = function(ppaMaps){
+var sum = [];
+  for(x=0;x<ppaMaps.length;x++){
+    sum.push(Number(ppaMaps[x].pricePerAvo));
+  }
+  var total = 0;
+  for (y=0; y <= sum.length-1; y++) {
+      total += sum[y];
+  }
+  var averagePrice = Number(total/sum.length).toFixed(2);
+  return averagePrice;
+
+};
