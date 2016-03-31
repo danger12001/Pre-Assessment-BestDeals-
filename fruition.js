@@ -72,3 +72,23 @@ exports.DscApples = function(JSONd){
   // console.log(decendingOrder);
   return decendingOrder;
 };
+exports.cFruit = function(JSONd){
+var fruit = [];
+var cheapest = '';
+for (var shops in JSONd) {
+  for (var fruits in JSONd[shops]) {
+      fruit.push(fruits);
+    }
+  }
+  for (x = 0; x < fruit.length; x++) {
+    var total = 0;
+    var count = 0;
+    for (var Shops in JSONd) {
+      if (JSONd[Shops].hasOwnProperty(fruit[x])) {
+        total += JSONd[Shops][fruit[x]];
+        count++;
+      }
+    }
+  console.log(count);
+}
+};
